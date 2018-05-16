@@ -26,6 +26,7 @@
 // Given m = 1, n = 1, return 9.
 
 // 统计安卓解锁图案的总数（m到n之间）
+// 图。深度优先统计个数。注意跳过特殊值，与之比较。1，3，7，9一样。2，4，6，8一样。5单独
 public class AndroidUnlockPatternsXzy {
 
     public static void main(String[] args){
