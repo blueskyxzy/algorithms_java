@@ -80,7 +80,6 @@ public class AndroidUnlockPatternsXzy {
         }
         visited[rootNumber] = false;   //每个出发点完成了将visited初始化
 
-
         return totalNum;
 
     }
