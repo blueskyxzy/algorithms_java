@@ -69,11 +69,11 @@ public class BinarySearchTreeIterator {
         BinarySearchTreeIterator bstIterator = new BinarySearchTreeIterator();
         TreeNode root = new TreeNode(45);
         TreeNode node1 = new TreeNode(23);
-        TreeNode node2 = new TreeNode(32);
+        TreeNode node2 = new TreeNode(51);
         TreeNode node3 = new TreeNode(6);
-        TreeNode node4 = new TreeNode(2);
-        TreeNode node5 = new TreeNode(75);
-        TreeNode node6 = new TreeNode(66);
+        TreeNode node4 = new TreeNode(35);
+        TreeNode node5 = new TreeNode(47);
+        TreeNode node6 = new TreeNode(83);
         root.left = node1;
         root.right = node2;
         node1.left = node3;
