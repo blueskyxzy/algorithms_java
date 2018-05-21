@@ -68,18 +68,20 @@ public class BinaryTreePathsXzy {
     private static void createPaths(List<String> result, TreeNode tn, String str) {
 
         if (tn.left==null && tn.right==null){
-
+            str = str + tn.val;
             result.add(str);
         }
 
         if (tn.left!=null){
-            str = str + tn.val + "->";
-            createPaths(result, tn.left, str);
+            // FIXME 左右节点都有，则str拼接了2次tn.val。
+//            str = str + tn.val + "->";
+            createPaths(result, tn.left, str + tn.val + "->");
         }
 
         if (tn.right!=null){
-            str = str + tn.val + "->";
-            createPaths(result, tn.right, str);
+//            str = str + tn.val + "->";
+            createPaths(result, tn.right, str + tn.val + "->");
         }
     }
+
 }
