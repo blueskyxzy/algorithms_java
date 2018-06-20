@@ -10,3 +10,12 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
 行为型模式：
 模板方法模式  命令模式  迭代器模式  观察者模式  中介者模式  备忘录模式
 解释器模式   状态模式  策略模式  职责链模式  访问者模式
+
+
+面向对象设计原则
+1.OCP  Open-Closed Principle 开闭原则
+    对扩展开发，对修改关闭
+2.DIP  dependence Inversion Principle 依赖倒转原则
+    针对接口编程，不要针对实现编程
+3.LoD  Law of Demeter 迪米特原则
+    只与直接朋友通信，不与陌生人通信
