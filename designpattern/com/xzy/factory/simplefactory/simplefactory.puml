@@ -1,0 +1,21 @@
+@startuml
+
+interface Car{
+    void run();
+}
+class Audi{
+    void run()
+}
+class BaoMa{
+    void run()
+}
+
+class CarFactory{
+    static Car createCar(String type)
+}
+
+class Cliet1{
+    void main()
+}
+
+@enduml
