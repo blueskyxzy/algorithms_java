@@ -1,0 +1,20 @@
+@startuml
+
+interface Car{
+    void run();
+}
+class Audi{
+    void run();
+}
+class BaoMa{
+    void run();
+}
+
+class Cliet1{
+    void main()
+}
+
+Car <|-- Audi
+Car <|-- BaoMa
+
+@enduml
