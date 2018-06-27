@@ -1,0 +1,15 @@
+简单工厂
+
+工厂方法
+
+抽象工厂
+
+new 的过程通过fatory创建
+
+应用场景：
+    1.JDK中的Calendar的getInstance
+    2.JDBC中Connectio对象的获取
+    3.Hibernate中SessionFactory创建session
+    4.spring中IOC容器创建管理bean对象
+    5.XML解析时的DOcumentBuilderFactory创建解析器对象
+    6.反射中CLass对象的newInstance()
