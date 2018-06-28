@@ -14,6 +14,7 @@
 2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。
 3、在 LINUX 上运行 WINDOWS 程序。
 4、JAVA 中的 jdbc。
+5  java.io.InputStreamReader(InputStream),java.io.InputStreamWriter(OutputStream)
 
 优点：
 1、可以让任何两个没有关联的类一起运行。
