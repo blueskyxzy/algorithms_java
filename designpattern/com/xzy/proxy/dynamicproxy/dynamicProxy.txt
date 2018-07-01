@@ -1,0 +1,30 @@
+动态代理
+
+Java.lang.reflect.Proxy
+    动态生成代理类和对象
+
+java.lang.reflect.InvocationHandler(处理器接口)
+    invoke方法实现对真实角色的代理访问
+    Proxy生成代理类对象指定对应的处理器对象
+
+
+StarHandler starHandler = new StarHandler(realStar);
+Star proxy = (Star)Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]{Star.class},starHandler);
+
+通过反射生成ProxyStar代理类，变量Handler，每个当前方法都产生handler.invoke（Object proxy, Method method, Object[] args）
+
+应用场景：
+    Struts2中拦截器的实现
+    数据库连接池关闭处理
+    Hibernate中延迟加载的实现
+    mybatis中实现拦截器插件
+    AspectJ的实现
+    spring中AOP的实现
+        日志拦截
+        声明式事务处理
+    web service
+    RMI远程方法调用
+    。。。。。。
+
+AOP 通过预编译方式和运行期动态代理实现不修改源代码的情况下给程序动态添加功能的技术
+
