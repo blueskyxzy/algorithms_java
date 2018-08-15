@@ -12,6 +12,9 @@ public class ConcreteContainer implements Container{
 
     List<Object> list = new ArrayList<>();
 
+    public ConcreteContainer() {
+    }
+
     public ConcreteContainer(List<Object> list) {
         this.list = list;
     }
@@ -26,7 +29,7 @@ public class ConcreteContainer implements Container{
 
     @Override
     public Iterator getIterator() {
-        return null;
+        return new ConcreteIterator();
     }
 
     public void addObject(Object o){
