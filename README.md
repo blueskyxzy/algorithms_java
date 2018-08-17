@@ -1,1 +1,1 @@
-# algorithms_java
+# 设计模式，算法等的java实现
