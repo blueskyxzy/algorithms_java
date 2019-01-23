@@ -10,5 +10,10 @@ public class Client {
         AirShipDirector director = new ConcreteAirShipDirector(new ConcreteAirShipBuilder());
         AirShip airShip = director.directAirShip();
         airShip.launch();
+
+        StringBuilder a = new StringBuilder("aaa");
+        StringBuilder b = new StringBuilder("bbb");
+        a.append(b);
+        System.out.println(a);
     }
 }
