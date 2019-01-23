@@ -134,13 +134,49 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
 
     已有对象.clone,创建新对象，分为深拷贝和浅拷贝。浅复制是内存一样，引用变了，值也变了
 
-6.适配器模式 adapter
-    不修改不兼容接口，转成客户需要的另一个接口
+6.适配器模式 adapter ！！！
+    不修改不兼容接口，转成客户需要的另一个接口,  维护不需要修改原代码
 
+    适配器继承或依赖已有的对象，实现想要的目标接口
     目标接口Target，需求适配的接口Adaptee，适配器Adapter。
 
-7.桥接模式
-8.装饰模式
+    类适配器方式：适配器继承Adaptee,实现Target.Target方法中调用Adaptee的方法 Target t = new Adapter();
+    对象适配器方式，使用组合方式整合：实现Target,保存Adaptee成员变量，先构造实例化再调用方法。可弥补单继承缺陷 Target t2 = new Adapter2(new Adaptee());
+
+    应用场景：
+    1、美国电器 110V，中国 220V，就要有一个适配器将 110V 转化为 220V。
+    2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。
+    3、在 LINUX 上运行 WINDOWS 程序。
+    4、JAVA 中的 jdbc。
+    5  java.io.InputStreamReader(InputStream),java.io.InputStreamWriter(OutputStream)
+
+7.桥接模式 bridge
+    系统可多个角度分类问题，   扩展能力优秀，但也使系统更加复杂
+    将抽象部分与实现部分分离，使它们都可以独立的变化。
+    在有多种可能会变化的情况下，用继承会造成类爆炸问题，扩展起来不灵活
+    如电脑可以分为台式电脑，pad,笔记本，笔记本分又分联想，戴尔，华硕等。电脑又可以分为联想电脑，戴尔电脑等，联想电脑分台式，笔记本，pad等
+
+    关键代码：抽象类依赖实现类。
+    Computer intelLapTop = new LapTop(new Intel());
+    一个基类，多类别继承基类，一个接口，其他类别实现接口。基类保存另一个类别接口，子类需要改接口实现类来构造初始化。这样就可以新建一个两个类别维度的类了
+
+8.装饰模式 decorator  !!!
+    动态为对象添加功能
+    扩展功能问题
+    无需通过继承添加子类就能扩展对象，使用对象关联代替继承关系，同时避免了系统体积的快速膨胀
+
+    关键代码：
+    1、Component 类充当抽象角色，不应该具体实现。
+    2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+
+
+    应用场景：
+    1.IO流中输入流和输出流的设计
+    2.Swing包中图形界面构件
+    3.Servlet中提供一个request对象的Decorator设计模式的默认
+    实现类HttpServletRequestWrapper,增强了request对象的功能
+    4.Struts2中，request,respone,session对象的处理
+
 9.组合模式
 10.外观模式
 11.享元模式
