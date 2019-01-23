@@ -91,7 +91,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     10.Spring MVC/struts1中的控制器对象
 
 2.工厂模式 !!!
-    易于相同接口类型不同实现类的扩展维护
+    易于相同功能接口不同实现类的扩展维护
 
     简单工厂simplefactory
     不满足开闭原则，扩展需要修改factory代码
@@ -118,16 +118,27 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
 
     写一个构建接口和装配器接口以及他们的实现。Builder实现产品的各成员变量的创建，写几个各成员变量build的方法，
     装配写一个方法将bulid的成员变量set入产品对象来实例的初始化
+    构建build意思是new 产品的各个组件，装配Director是set各组件成员变量
 
     场景：
     1.StringBuilder类的append方法
     2.SQL中的PreparedStatement
     3.JDOM中，DomBuilder,SAXBulder
 
-5.原型模式
+5.原型模式 又叫克隆模式，拷贝模式 prototype
+    new 对象数据准备和访问繁琐，耗时，需求拷贝
+    是内存操作，不同于new
 
+    类需要实现Cloneable接口和clone方法(Object的方法)
+    Prototype模式中最困难的是内存复制，java提供clone方法实现
 
-6.适配器模式
+    已有对象.clone,创建新对象，分为深拷贝和浅拷贝。浅复制是内存一样，引用变了，值也变了
+
+6.适配器模式 adapter
+    不修改不兼容接口，转成客户需要的另一个接口
+
+    目标接口Target，需求适配的接口Adaptee，适配器Adapter。
+
 7.桥接模式
 8.装饰模式
 9.组合模式
