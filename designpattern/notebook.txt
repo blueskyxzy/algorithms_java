@@ -78,7 +78,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     4.静态内部类式（线程安全，效率高，可以延迟加载）
     5.枚举单例（线程安全，效率高，不能延迟加载）
 
-    应用场景：
+    应用实例：
     1.Windows的 任务管理器
     2.Windows的回收站
     3.读取配置文件的类
@@ -100,7 +100,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     工厂方法factorymethod
     写一个工厂接口 多个自定义的工厂类，扩展新增工厂类和创建对应实现类的方法。
 
-    场景：
+    应用实例：
     1.JDK中的Calendar的getInstance
     2.JDBC中Connectio对象的获取
     3.Hibernate中SessionFactory创建session
@@ -143,7 +143,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     类适配器方式：适配器继承Adaptee,实现Target.Target方法中调用Adaptee的方法 Target t = new Adapter();
     对象适配器方式，使用组合方式整合：实现Target,保存Adaptee成员变量，先构造实例化再调用方法。可弥补单继承缺陷 Target t2 = new Adapter2(new Adaptee());
 
-    应用场景：
+    应用实例：
     1、美国电器 110V，中国 220V，就要有一个适配器将 110V 转化为 220V。
     2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。
     3、在 LINUX 上运行 WINDOWS 程序。
@@ -170,7 +170,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
     原有接口Component和实现类concreteComponent。扩展时实现接口(装饰器Decorator)，并持有一个对象接口成员，通过原实现类构造初始化，扩展多个功能类concreteDecorator需要Component引用并重写父类方法，
 
-    应用场景：
+    应用实例：
     1.IO流中输入流和输出流的设计
     2.Swing包中图形界面构件
     3.Servlet中提供一个request对象的Decorator设计模式的默认
@@ -189,7 +189,12 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     Decorator: StreamDecoder extends Reader ,private InputStream in; StreamDecoder.forInputStreamReader。
     ConcreteDecorator:  BufferedReader extends Reader  , public BufferedReader(Reader in)。InputStreamReader extends Reader , InputStreamReader(InputStream in) ，private final StreamDecoder sd;。
 
-9.组合模式
+9.组合模式 composite
+    处理树形结构
+
+    应用实例：
+    1、算术表达式包括操作数、操作符和另一个操作数，其中，另一个操作符也可以是操作数、操作符和另一个操作数。
+    2、在 JAVA AWT 和 SWING 中，对于 Button 和 Checkbox 是树叶，Container 是树枝。
 
 10.外观模式
 11.享元模式
