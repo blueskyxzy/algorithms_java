@@ -28,8 +28,7 @@ public class Client {
         // IO流装饰器
         //    Component抽象构件: interface InputStream
         //    ConcreteComponent: FileInputStream extends InputStream
-        //    Decorator: FilterInputStream
-        //    ConcreteDecorator:class BufferedInputStream extends FilterInputStream
-
+        //    Decorator: FilterInputStream  protected volatile InputStream in;
+        //    ConcreteDecorator:BufferedInputStream extends FilterInputStream  重写InputStream reader方法
     }
 }
