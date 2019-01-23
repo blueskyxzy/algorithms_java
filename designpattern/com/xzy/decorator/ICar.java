@@ -50,7 +50,7 @@ class WaterCar extends CarDecorator{
     }
 
     public void swim(){
-        System.out.println("可以水上游");
+        System.out.println("可以水上跑");
     }
 
     @Override
