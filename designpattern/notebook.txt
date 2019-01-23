@@ -168,7 +168,7 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     关键代码：
     1、Component 类充当抽象角色，不应该具体实现。
     2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
-
+    原有接口Component和实现类concreteComponent。扩展时实现接口(装饰器Decorator)，并持有一个对象接口成员，通过原实现类构造初始化，扩展多个功能类concreteDecorator需要Component引用并重写父类方法，
 
     应用场景：
     1.IO流中输入流和输出流的设计
@@ -177,7 +177,20 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     实现类HttpServletRequestWrapper,增强了request对象的功能
     4.Struts2中，request,respone,session对象的处理
 
+    如InputStream inputStream = new BufferedInputStream(new FileInputStream(new File("decorator.txt")));
+    Component: abstract class InputStream
+    ConcreteComponent: FileInputStream extends InputStream
+    Decorator: FilterInputStream  ,   protected volatile InputStream in;  protected FilterInputStream(InputStream in);
+    ConcreteDecorator: BufferedInputStream, class BufferedInputStream extends FilterInputStream,     public BufferedInputStream(InputStream in) , 重写InputStream.reader等方法
+
+    如Reader r = new BufferedReader(new InputStreamReader(new FileInputStream(new File("decorator.txt"))));
+    Component: abstract class Reader
+    ConcreteComponent: FileInputStream extends InputStream
+    Decorator: StreamDecoder extends Reader ,private InputStream in; StreamDecoder.forInputStreamReader。
+    ConcreteDecorator:  BufferedReader extends Reader  , public BufferedReader(Reader in)。InputStreamReader extends Reader , InputStreamReader(InputStream in) ，private final StreamDecoder sd;。
+
 9.组合模式
+
 10.外观模式
 11.享元模式
 12.代理模式
