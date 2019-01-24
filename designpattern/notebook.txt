@@ -286,7 +286,24 @@ Group Of Four（4个人总结的软件设计的套路） 提高项目的扩展�
     4. Hibernate中模板程序
     5. spring 中JDBCTemplate，Hibernate等
 
-14.命令模式
+14.命令模式 command 也称为动作Action模式或事务transaction模式
+    请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。
+
+    行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时
+
+    关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口
+
+    Command抽象命令类
+    ConcreteCommand
+    Invoker调用者
+    Receiver接受者
+
+    ConcreteCommand保存并构造Receiver接受者，并调用receiver的方法，Invoker调用者保存并构造Command，也可以是命令容器，invoke方法调用command的方法。
+
+    开发场景：
+    1.struts2中，action的整个调用过程就有命令模式
+    2.数据库事务底层实现
+    3.命令的撤销和恢复
 
 15.迭代器模式
 
