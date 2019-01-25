@@ -16,7 +16,7 @@
 
 5.直接选择排序 selectsort
 
-6.桶排序 bucketsort
+6.堆排序 heapsort
 
 7.归并排序 mergesort
 
@@ -24,7 +24,7 @@
 
 9.基数排序 radixsort
 
-10.堆排序 heapsort
+10.桶排序 bucketsort
 
 11.图的广度优先遍历和深度优先遍历
 
@@ -98,7 +98,7 @@
 
     基数排序（radix sort）
 
-    堆排序（Heapsort sort）
+    桶排序
 
     最短路径dijkstra算法：以起始点为中心向外层层扩展，直到扩展到终点为止。（每次找到离源点最近的一个顶点，然后以该顶点为重心进行扩展）
         1:初始化。dis,T。dis记录顶点到各节点的当前的最短路径，T代表当前已经决定最短路径的顶点
