@@ -7,7 +7,7 @@ package com.xzy.algorithms;
 // 快速排序
 public class quickSort {
 
-    // 基准+2个索引+交换+二分+递归
+    // 基准+2个索引+交换+递归
     public static void sort(int[] arr, int low, int high){
         int x = arr[low]; // 基准
         int start = low;
