@@ -3,20 +3,35 @@
 1.冒泡排序
     双循环冒泡
     单循环冒泡
-2.快速排序
-3.归并排序
-4.希尔排序
-5.直接选择排序
-6.计数排序
-7.基数排序
-8.桶排序
-9.插入排序
+
+2.快速排序 heapsort
+
+3.直接插入排序 insertsort
+
+4.希尔排序 shellsort
+
+5.直接选择排序 selectsort
+
+6.桶排序 bucketsort
+
+7.归并排序 mergesort
+
+8.计数排序 countsort
+
+9.基数排序 radixsort
+
 10.堆排序
+
 11.图的广度优先遍历和深度优先遍历
-12.最短路径的dijkstra算法
-13.单源最短路径BellmanFord算法
+
+12.最短路径的dijkstra算法    dijkstra
+
+13.单源最短路径BellmanFord算法  BellmanFord
+
 14.拓扑排序
+
 15.RSA
+
 16.动态规划
 
 排序，查找，图和字符串
