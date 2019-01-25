@@ -12,7 +12,8 @@ public class Client {
         int[] arr = {66, 13, 51, 76, 81, 27, 57, 69, 23, 27, 64, 39};
 //        popSort.popDoubleLoop(arr);
 //        popSort.popSingleLoop(arr);
-        quickSort.sort(arr, 0, arr.length - 1);
+//        quickSort.sort(arr, 0, arr.length - 1);
+        insertSort.sort(arr);
         System.out.println("result:" + Arrays.toString(arr));
 
     }
