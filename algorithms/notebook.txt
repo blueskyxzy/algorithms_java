@@ -11,6 +11,8 @@
     while{ while{} if{交换} while{} if{交换} } if{递归} if{递归}
 
 3.直接插入排序 insertsort
+    一步将一个待排序的记录，插入到前面已经排好序的有序序列中去，直到插完所有元素为止。
+    for{ while{}}
 
 4.希尔排序 shellsort
 
