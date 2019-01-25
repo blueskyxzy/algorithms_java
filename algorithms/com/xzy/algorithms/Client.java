@@ -9,9 +9,10 @@ import java.util.Arrays;
 public class Client {
 
     public static void main(String[] args){
-        int[] arr = {66, 13, 51, 76, 81, 26, 57, 69, 23};
+        int[] arr = {66, 13, 51, 76, 81, 27, 57, 69, 23, 27, 64, 39};
 //        popSort.popDoubleLoop(arr);
-        popSort.popSingleLoop(arr);
+//        popSort.popSingleLoop(arr);
+        quickSort.sort(arr, 0, arr.length - 1);
         System.out.println("result:" + Arrays.toString(arr));
 
     }
