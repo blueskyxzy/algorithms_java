@@ -13,7 +13,9 @@ public class Client {
 //        popSort.popDoubleLoop(arr);
 //        popSort.popSingleLoop(arr);
 //        quickSort.sort(arr, 0, arr.length - 1);
-        insertSort.sort(arr);
+//        insertSort.sort(arr);
+//        shellSort.sort(arr);
+        mergeSort.sort(arr, 0, arr.length - 1);
         System.out.println("result:" + Arrays.toString(arr));
     }
 }
