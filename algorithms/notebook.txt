@@ -15,12 +15,19 @@
     for{ while{}}
 
 4.希尔排序 shellsort
+    按增量分组，每组内进行直接插入排序，减半增量，直至0.
+    最坏为O(n^2)，最好为O(n)，平均为O(n^1.3)
+    d=len/2 while(d>0){for{ if{ while{}}  d/=2}
 
 5.直接选择排序 selectsort
 
 6.堆排序 heapsort
 
 7.归并排序 mergesort
+    归并是对多个有序序列排序成一个有序的算法。
+    对于一个无序序列，分成多个长度为1的有序序列，递归，即可完成无序序列的归并排序
+    二分+递归+归并
+    归并：while (i < n && j < m){if{}else{}} , while (i < n){} ,while (j < m){}
 
 8.计数排序 countsort
 
