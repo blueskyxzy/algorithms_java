@@ -25,6 +25,5 @@ public class Client {
                         {0, 1, 0, 0, 0, 2},
                         {0, 0, 0, 6, 2, 0}};
         minPath.sort(arrs);
-        System.out.println("result:");
     }
 }
