@@ -15,7 +15,8 @@ public class Client {
 //        quickSort.sort(arr, 0, arr.length - 1);
 //        insertSort.sort(arr);
 //        shellSort.sort(arr);
-        mergeSort.sort(arr, 0, arr.length - 1);
+//        mergeSort.sort(arr, 0, arr.length - 1);
+        selectSort.sort(arr);
         System.out.println("result:" + Arrays.toString(arr));
     }
 }
