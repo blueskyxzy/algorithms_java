@@ -9,7 +9,7 @@ import java.io.Serializable;
 // 懒汉式
 public class SingletonLHS implements Serializable{
 
-    private  static SingletonLHS s = new SingletonLHS();
+    private  static SingletonLHS s;
 
     private SingletonLHS(){
         if (s != null){  // 多次调用抛出异常，以免反射破解单例
