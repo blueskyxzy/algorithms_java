@@ -17,4 +17,18 @@ public class Test1 {
 //    }
 
 
+    // 懒汉式
+    private static Test1 t; // 不初始化
+
+    private Test1(){
+
+    }
+
+    public synchronized static Test1 getInstance(){
+        if (t == null){
+            t = new Test1();
+        }
+        return t;
+    }
+
 }
