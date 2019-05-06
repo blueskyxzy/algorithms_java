@@ -16,6 +16,8 @@ public class Test02 {
     }
 
     public static String replaceSpace(StringBuffer str) {
+        if (str == null)
+            return null;
         String s = str.toString();
         String result = s.replaceAll(" ", "%20");
         return result;
