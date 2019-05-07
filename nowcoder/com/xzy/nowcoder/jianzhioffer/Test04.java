@@ -43,9 +43,9 @@ public class Test04 {
             int rootValue = pre[pstart];
             TreeNode rootNode = new TreeNode(rootValue);
             Integer index = inMap.get(rootValue);
-            // pstart + index - istart
+            // pstart + index - istart =  pstart + 1 + (index-1 - istart)
             TreeNode leftNode = constructprein(pre, in, pstart + 1, pstart + index - istart, istart, index - 1, inMap);
-            // pstart + index - istart + 1
+            // pstart + index - istart + 1 = 左边基础上+1（pstart + index - istart） + 1  不能index +1
             TreeNode rightNode = constructprein(pre, in, pstart + index - istart + 1, pend, index + 1, iend, inMap);
             rootNode.left = leftNode;
             rootNode.right = rightNode;
