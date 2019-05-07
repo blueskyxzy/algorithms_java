@@ -13,15 +13,15 @@ import java.util.Map;
 // 重构二叉树
 public class Test04 {
     public static void main(String[] args) {
-        int[] pre = {1,2,4,7,3,5,6,8};
-        int[] in = {4,7,2,1,5,3,8,6};
+        int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
         TreeNode treeNode = reConstructBinaryTree(pre, in);
         // 中序遍历二叉树
         midPrintBinaryTree(treeNode);
     }
 
     private static void midPrintBinaryTree(TreeNode treeNode) {
-        if (treeNode != null){
+        if (treeNode != null) {
             midPrintBinaryTree(treeNode.left);
             System.out.println(treeNode.val);
             midPrintBinaryTree(treeNode.right);
@@ -29,24 +29,24 @@ public class Test04 {
     }
 
     // 由先序遍历和中序遍历，构建二叉树
-    public static TreeNode reConstructBinaryTree(int [] pre, int [] in) {
+    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
         // 构建inMap方便查询中序遍历索引,前提是没有重复数字
-        Map<Integer,Integer> inMap = new HashMap<>();
-        for(int i = 0; i < in.length; i++){
+        Map<Integer, Integer> inMap = new HashMap<>();
+        for (int i = 0; i < in.length; i++) {
             inMap.put(in[i], i);
         }
-        return constructprein(pre, in, 0, pre.length-1,0, in.length-1, inMap);
+        return constructprein(pre, in, 0, pre.length - 1, 0, in.length - 1, inMap);
     }
 
     private static TreeNode constructprein(int[] pre, int[] in, int pstart, int pend, int istart, int iend, Map<Integer, Integer> inMap) {
-        if (pend >= pstart){
+        if (pend >= pstart) {
             int rootValue = pre[pstart];
             TreeNode rootNode = new TreeNode(rootValue);
             Integer index = inMap.get(rootValue);
             // pstart + index - istart
-            TreeNode leftNode = constructprein(pre, in, pstart + 1, pstart + index - istart, istart, index-1, inMap);
+            TreeNode leftNode = constructprein(pre, in, pstart + 1, pstart + index - istart, istart, index - 1, inMap);
             // pstart + index - istart + 1
-            TreeNode rightNode = constructprein(pre, in, pstart + index - istart + 1, pend, index+1, iend, inMap);
+            TreeNode rightNode = constructprein(pre, in, pstart + index - istart + 1, pend, index + 1, iend, inMap);
             rootNode.left = leftNode;
             rootNode.right = rightNode;
             return rootNode;
@@ -58,10 +58,17 @@ public class Test04 {
     }
 
     // Definition for binary tree;
-   static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+
+    }
+
+
+
 }
