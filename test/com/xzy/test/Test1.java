@@ -1,5 +1,6 @@
 package com.xzy.test;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import java.util.Set;
 public class Test1 {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        String str = "/西溪园区/测试楼/1F/1F-2/";
 //        String substr = str.substring(1);
 //        String[] strs = substr.split("/");
@@ -29,14 +30,21 @@ public class Test1 {
 //        System.out.println(floorNamePath);
 //        System.out.println(buildingNamePath);
 
-       Set<String> set = new HashSet<>();
-       set.add("/西溪园区/测试楼/");
-       set.add("/西溪园区/1楼/");
-       set.add("/西溪园区/测试楼/");
-       for(String str: set){
-           System.out.println("::" +str);
-       }
+        Set<String> set = new HashSet<>();
+        set.add("/西溪园区/测试楼/");
+        set.add("/西溪园区/1楼/");
+        set.add("/西溪园区/测试楼/");
+        for (String str : set) {
+            System.out.println("::" + str);
+        }
 
+        String price = "1334";
+        BigDecimal back = new BigDecimal(1334.00);
+        if (back.compareTo(new BigDecimal(Long.valueOf(price))) != 0) {
+            System.out.println("1");
+        } else {
+            System.out.println("2");
+        }
 
     }
 }
