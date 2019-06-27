@@ -27,7 +27,6 @@ public class Test15 {
 
     // 思路比网上多个容器存，空间复杂度大些
     public static ListNode ReverseList(ListNode head) {
-        ListNode result = null;
         if (head == null) {
             return head;
         }
@@ -42,8 +41,16 @@ public class Test15 {
             listNodes.add(temp);
             current = nex;  // 引用会修改对象值和next指向，不会修改next对象
         }
-        result = listToListNode(listNodes);
-        return result;
+
+        int size = listNodes.size();
+        ListNode root = listNodes.get(size - 1);
+        ListNode other = root;
+        for (int i = size - 2; i >= 0; i--) {
+            ListNode tmp = listNodes.get(i);
+            other.next = tmp;
+            other = tmp;
+        }
+        return root;
 
     }
 
@@ -84,15 +91,15 @@ public class Test15 {
     }*/
 
 
-    //数组转换成链表
+    //list转换成链表
     public static ListNode listToListNode(List<ListNode> listNodes) {
-        ListNode root = listNodes.get(0);//生成链表的根节点，并将数组的第一个元素的值赋给链表的根节点
-        ListNode other = root;//生成另一个节点，并让other指向root节点，other在此作为一个临时变量，相当于指针
+        ListNode root = listNodes.get(0);
+        ListNode other = root;
         int size = listNodes.size();
-        for (int i = 1; i < size; i++) {//由于已给root赋值，所以i从1开始
-            ListNode temp = listNodes.get(i);//每循环一次生成一个新的节点,并给当前节点赋值
-            other.next = temp;//将other的下一个节点指向生成的新的节点
-            other = temp;//将other指向最后一个节点(other的下一个节点)  other=other.getNext();
+        for (int i = 1; i < size; i++) {
+            ListNode temp = listNodes.get(i);
+            other.next = temp;
+            other = temp;
         }
         return root;
     }
