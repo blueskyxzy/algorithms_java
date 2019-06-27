@@ -22,38 +22,30 @@ public class Test15 {
         node3.next = node4;
         node4.next = node5;
         ListNode listNode = ReverseList(node1);
-        if (listNode != null){
-            System.out.println(listNode.val);
-        }
-        while (listNode.next != null){
-            listNode = listNode.next;
-            System.out.println(listNode.val);
-        }
-
-
+        printListNode(listNode);
     }
 
     // 思路比网上多个容器存，空间复杂度大些
     public static ListNode ReverseList(ListNode head) {
         ListNode result = null;
         if (head == null) {
-            return null;
+            return head;
         }
         List<ListNode> listNodes = new ArrayList<>();
-        ListNode temp;
-        while (head != null) {
-            temp = head;
+        ListNode temp = null;
+        ListNode nex = null;
+        ListNode current = head;
+        while (current != null) {
+            temp = current;
+            nex = current.next;
             temp.next = null;
             listNodes.add(temp);
-            head = head.next;
+            current = nex;  // 引用会修改对象值和next指向，不会修改next对象
         }
-        ListNode current;
-        result = listNodes.get(0);
-        for (ListNode listNode : listNodes) {
-            result.next = listNode;
-        }
-
+        result = listToListNode(listNodes);
         return result;
+
+    }
 
 /*    // 网上递归方法
     // 如果链表为空或者链表中只有一个元素
@@ -67,12 +59,11 @@ public class Test15 {
         head.next.next=head;
         head.next = null;
 
-        return pReverseNode;
-
-    */
+        return pReverseNode;*/
 
 
- /*   // 网上方法 多变量控制反转
+/*
+    // 网上方法 多变量控制反转
     public static ListNode ReverseList(ListNode head) {
         if(head==null)
             return null;
@@ -92,9 +83,40 @@ public class Test15 {
         return reversedHead;
     }*/
 
-        //   1 2  3  4 5  ->  1  2
-        //
-        //
 
+    //数组转换成链表
+    public static ListNode listToListNode(List<ListNode> listNodes) {
+        ListNode root = listNodes.get(0);//生成链表的根节点，并将数组的第一个元素的值赋给链表的根节点
+        ListNode other = root;//生成另一个节点，并让other指向root节点，other在此作为一个临时变量，相当于指针
+        int size = listNodes.size();
+        for (int i = 1; i < size; i++) {//由于已给root赋值，所以i从1开始
+            ListNode temp = listNodes.get(i);//每循环一次生成一个新的节点,并给当前节点赋值
+            other.next = temp;//将other的下一个节点指向生成的新的节点
+            other = temp;//将other指向最后一个节点(other的下一个节点)  other=other.getNext();
+        }
+        return root;
     }
+
+    //数组转换成链表
+    public static ListNode arrayToListNode(int[] s) {
+        ListNode root = new ListNode(s[0]);//生成链表的根节点，并将数组的第一个元素的值赋给链表的根节点
+        ListNode other = root;//生成另一个节点，并让other指向root节点，other在此作为一个临时变量，相当于指针
+        for (int i = 1; i < s.length; i++) {//由于已给root赋值，所以i从1开始
+            ListNode temp = new ListNode(s[i]);//每循环一次生成一个新的节点,并给当前节点赋值
+            other.next = temp;//将other的下一个节点指向生成的新的节点
+            other = temp;//将other指向最后一个节点(other的下一个节点)  other=other.getNext();
+        }
+        return root;
+    }
+
+    /**
+     * 遍历一个链表
+     */
+    public static void printListNode(ListNode listNode) {
+        while (listNode != null) {
+            System.out.print(listNode.val + " ");
+            listNode = listNode.next;
+        }
+    }
+
 }
