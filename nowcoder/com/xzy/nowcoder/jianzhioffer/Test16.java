@@ -29,7 +29,6 @@ public class Test16 {
         ListNode node8 = null;
         ListNode merge2 = Merge(node7, node8); // 合并
         CodeUtils.printListNode(merge2); // 遍历输出链表
-
     }
 
     public static ListNode Merge(ListNode list1,ListNode list2) {
