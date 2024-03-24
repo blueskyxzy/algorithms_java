@@ -29,7 +29,7 @@ public class BinaryTreePaths {
 
 
     public static List<String> binaryTreePaths(TreeNode root) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
 
         if(root == null) {
             return result;
