@@ -46,6 +46,7 @@ public class CodeUtils {
         return root;
     }
 
+    // 中序遍历二叉树
     public static void midPrintBinaryTree(TreeNode treeNode) {
         if (treeNode != null) {
             midPrintBinaryTree(treeNode.left);

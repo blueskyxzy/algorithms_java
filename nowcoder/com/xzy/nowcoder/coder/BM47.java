@@ -58,7 +58,7 @@ public class BM47 {
          */
         public int findKth (int[] a, int n, int K) {
             // write code here
-            // 小顶堆
+            // 优先级队列构建小顶堆
             PriorityQueue<Integer> minHeap = new PriorityQueue<>(K);
             for (int i = 0; i < n ; i++) {
                 if (i < K) {
