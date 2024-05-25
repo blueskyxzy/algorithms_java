@@ -1,0 +1,14 @@
+建造者模式
+
+建造复杂的产品
+装配需要步骤
+
+
+建造模式本质：
+    分离了对象子组件的单独构建（Builder负责）和装配（Director负责）。  适用于：某对象构建过程复杂的情况下使用
+    实现了构建和装配的解耦。实现了更好的复用
+
+应用场景：
+    1.StringBuilder类的append方法
+    2.SQL中的PreparedStatement
+    3.JDOM中，DomBuilder,SAXBulder

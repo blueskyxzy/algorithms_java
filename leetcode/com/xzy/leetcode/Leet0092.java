@@ -47,14 +47,15 @@ public class Leet0092 {
         // 虚拟头
         ListNode result = new ListNode(head.val);
         result.next = head;
-        // 反转链节点前一个节点位置
-        ListNode pre;
         for (int i = 0; i < left; i++){
             head = head.next;
         }
+        // 反转链节点前一个节点位置
+        ListNode pre = head;
+        head = head.next;
         for (int i = left; i < right; i++){
             // 反转链表
-            head = head.next;
+
         }
         return result;
     }
