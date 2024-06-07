@@ -38,6 +38,7 @@ import java.util.Map;
         */
 public class Leet0003 {
 
+    // 滑动窗口解法
     public static int lengthOfLongestSubstring(String s) {
         int len = s.length();
         int left = 0;

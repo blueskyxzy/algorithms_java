@@ -42,6 +42,7 @@ import java.util.Scanner;
 
 public class LeetCode0079 {
     public static void main(String[] args) {
+        // 递归
         Scanner in = new Scanner(System.in);
         // 思路1统计单次每个字符的位置记录，然后判断是否有相邻的，i或者j相同则相邻
 

@@ -60,6 +60,7 @@ public class Leet0092 {
         return result;
     }
 
+    // 反转链表需要双指针，虚拟头
     public static ListNode reverseBetween2(ListNode head, int left, int right) {
         // 遍历依次反转 3个节点定位需要3个指针，从left前面的节点   已反转节点后的第一个结点   下一个节点 完成3个节点指针修改
         ListNode dummy = new ListNode(0);
