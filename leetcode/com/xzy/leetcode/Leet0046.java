@@ -33,7 +33,7 @@ import java.util.Scanner;
  * nums 中的所有整数 互不相同
  **/
 
-public class LeetCode0046 {
+public class Leet0046 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // 回溯思想

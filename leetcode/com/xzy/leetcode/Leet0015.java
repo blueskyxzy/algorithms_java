@@ -37,7 +37,7 @@ import java.util.Scanner;
  * 解释：唯一可能的三元组和为 0 。
  **/
 
-public class LeetCode0015 {
+public class Leet0015 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

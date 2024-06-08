@@ -40,7 +40,7 @@ import java.util.Scanner;
  * 进阶：你可以使用搜索剪枝的技术来优化解决方案，使其在 board 更大的情况下可以更快解决问题？
  **/
 
-public class LeetCode0079 {
+public class Leet0079 {
     public static void main(String[] args) {
         // 递归
         Scanner in = new Scanner(System.in);
