@@ -41,7 +41,7 @@ public class Leet0015 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // 方法一 双指针
+        // 方法一 先排序，双指针
         //如何移动双指针呢?
         //            1>:nums[i] + nums[left] + nums[right] < 0
         //                说明我们需要更大的数，那就要往后移动left

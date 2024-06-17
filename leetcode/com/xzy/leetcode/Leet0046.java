@@ -52,7 +52,12 @@ public class Leet0046 {
     //如果 first=n\textit{first} = nfirst=n，说明我们已经填完了 nnn 个位置（注意下标从 000 开始），找到了一个可行的解，我们将 output\textit{output}output 放入答案数组中，递归结束。
     //如果 first<n\textit{first} < nfirst<n，我们要考虑这第 first\textit{first}first 个位置我们要填哪个数。根据题目要求我们肯定不能填已经填过的数，因此很容易想到的一个处理手段是我们定义一个标记数组 vis\textit{vis}vis 来标记已经填过的数，那么在填第 first\textit{first}first 个数的时候我们遍历题目给定的 nnn 个数，如果这个数没有被标记过，我们就尝试填入，并将其标记，继续尝试填下一个位置，即调用函数 backtrack(first+1,output)\textit{backtrack}(\textit{first} + 1, \textit{output})backtrack(first+1,output)。回溯的时候要撤销这一个位置填的数以及标记，并继续尝试其他没被标记过的数。
     //使用标记数组来处理填过的数是一个很直观的思路，但是可不可以去掉这个标记数组呢？毕竟标记数组也增加了我们算法的空间复杂度。
-    //
+
+
+//    全排列问题就是回溯问题。用自然语言来描述就是，取出随机一个元素，然后再从剩下的数组中随机取出一个元素.... 这里的关键就是剩下的数组，需要对其数学建模，换言之，剩下的数组应该作为参数传入到回溯方法中
+//    定义回溯方法，传入到参数有：剩下元素的数组，数字 Path，以及 result 数组。
+//    定义一个 for 循环，让 temp 数组 = 原数组（深拷贝），并且每次从 temp 数组中移除一个元素添加到 path 中，并将 temp 数组传入回溯方法中。
+//    当传入到 temp 数组为空时，即添加当前 path 进 result 数组中。
 
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
