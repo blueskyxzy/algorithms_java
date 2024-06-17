@@ -1,6 +1,8 @@
 package com.xzy.nowcoder.huawei;
 
 
+import java.util.Scanner;
+
 /**
  * @author: xzy
  * @create: 2024-06-17
@@ -39,6 +41,9 @@ package com.xzy.nowcoder.huawei;
 
 public class Main04 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        String s = scanner.nextLine();
         int[] nums = new int[]{0, 1, 0, 3, 12};
         int[] nums1 = new int[]{0, 1, 0, 0, 3, 12};
         nums = exchangeZero(nums1, 6);
@@ -62,6 +67,23 @@ public class Main04 {
             }
         }
         return nums;
+    }
+
+    public void moveZeroes(int[] nums)  {
+        int length;
+        if (nums == null || (length = nums.length) == 0) {
+            return;
+        }
+        int j = 0;
+        for (int i = 0; i < length; i++) {
+            if (nums[i] != 0) {
+                if (i > j) {// #1
+                    nums[j] = nums[i];
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
     }
 
 }
