@@ -36,7 +36,7 @@ public class Leet0692 {
         //        });
         //  return rec.subList(0, k);
 
-        // 方案二：优先队列
+        // 方案二：优先队列 priortyQueue或者TreeNode
 
     }
 
