@@ -41,11 +41,9 @@ import java.util.Scanner;
 
 public class Main04 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        String s = scanner.nextLine();
         int[] nums = new int[]{0, 1, 0, 3, 12};
         int[] nums1 = new int[]{0, 1, 0, 0, 3, 12};
+        int[][] nums2 = new int[][]{{0, 1, 0, 0, 3, 12}, {0, 1, 0, 0, 3, 12}};
         nums = exchangeZero(nums1, 6);
         for (Integer num : nums) {
             System.out.println(num);
@@ -69,7 +67,7 @@ public class Main04 {
         return nums;
     }
 
-    public void moveZeroes(int[] nums)  {
+    public void moveZeroes(int[] nums) {
         int length;
         if (nums == null || (length = nums.length) == 0) {
             return;
